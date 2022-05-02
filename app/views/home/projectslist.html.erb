@@ -1,0 +1,26 @@
+<h1>Projects List</h1>
+
+<% @lists.each do |list| %>
+    <li> <%= link_to list.category, home_projectslist_path%></li>
+<% end%>
+
+<table>
+    <thead>
+        <tr>
+        <th><center>Task</center></th>
+        <th><center>Status</center></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @lists.each do |task| %>
+        <tr>
+            <td><%= task.description %></td>
+            <td><%= task.completed %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%# Want to be able to show all the tasks associated with the project, and add a status bar %>
